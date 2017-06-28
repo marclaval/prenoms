@@ -1,0 +1,18 @@
+<form class="form-inline" (submit)="update()">
+  <div class="form-group">
+    <label for="search">Nom</label>
+    <input [(ngModel)]="input" name="name" type="text" id="search" class="form-control mx-sm-3" >
+    <button type="submit" class="btn btn-primary">Go</button>
+  </div>
+</form>
+
+<table>
+  <tr><th>Année</th><th *ngFor="let item of data">{{item.name}} ({{item.gender}})</th></tr>
+  <ng-template [ngIf]="data">
+    <tr *ngFor="let item of data[0].years; let i = index">
+      <td>{{boundaries.end - i}}</td>
+      <td *ngFor="let item of data">{{item.years[data[0].years.length - i - 1]}}
+        <i>({{((item.years[data[0].years.length - i - 1]) / (stats[data[0].years.length - i - 1]) * 100).toFixed(2)}}%)</i></td>
+    </tr>
+  </ng-template>
+</table>

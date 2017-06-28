@@ -1,0 +1,16 @@
+<form class="form-inline" (submit)="update()">
+  <div class="form-group">
+    <label for="beginYear">De</label>
+    <input [(ngModel)]="inputBegin" name="begin" type="number" id="beginYear" class="form-control mx-sm-3" [attr.min]="boundaries?.begin" [attr.max]="boundaries?.end" pattern="[0-9]{4}">
+    <label for="endYear">à</label>
+    <input [(ngModel)]="inputEnd" name="end" type="number" id="endYear" class="form-control mx-sm-3" [attr.min]="boundaries?.begin" [attr.max]="boundaries?.end" pattern="[0-9]{4}">
+    <button type="submit" class="btn btn-primary">Go</button>
+  </div>
+</form>
+
+<table>
+  <tr *ngFor="let item of data; let i = index">
+    <td>{{i + 1}}</td>
+    <td>{{item.name}}</td>
+    <td>{{item.times}} <i>({{(100 * item.times / total).toFixed(2)}}%)</i></td></tr>
+</table>
