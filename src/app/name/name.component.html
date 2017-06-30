@@ -8,9 +8,9 @@
 
 <table>
   <tr><th>Année</th><th *ngFor="let item of data">{{item.name}} ({{item.gender}})</th></tr>
-  <ng-template [ngIf]="data">
+  <ng-template [ngIf]="data && data[0]">
     <tr *ngFor="let item of data[0].years; let i = index">
-      <td>{{boundaries.end - i}}</td>
+      <td><a routerLink="/year/{{boundaries.end - i}}">{{boundaries.end - i}}</a></td>
       <td *ngFor="let item of data">{{item.years[data[0].years.length - i - 1]}}
         <i>({{((item.years[data[0].years.length - i - 1]) / (stats[data[0].years.length - i - 1]) * 100).toFixed(2)}}%)</i></td>
     </tr>

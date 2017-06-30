@@ -13,9 +13,12 @@ import { DataService } from './data.service';
 import { ConfigService } from './config.service';
 
 const appRoutes: Routes = [
-  {path: '', children: []},
+  {path: '', redirectTo: '/year', pathMatch: 'full'},
   {path: 'name', component: NameComponent},
-  {path: 'year', component: YearComponent}
+  {path: 'name/:n', component: NameComponent},
+  {path: 'year', component: YearComponent},
+  {path: 'year/:y', component: YearComponent},
+  {path: 'year/:b/:e', component: YearComponent}
 ];
 
 @NgModule({

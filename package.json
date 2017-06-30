@@ -9,7 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "data": "node ./scripts/generateData.js"
+    "data": "node ./scripts/generateData.js",
+    "prod": "ng build --prod --bh /prenoms/"
   },
   "private": true,
   "dependencies": {

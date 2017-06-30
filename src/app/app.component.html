@@ -12,13 +12,13 @@
       </label>
     </div>
   </div>
-  <div class="navbar-brand">Prénoms de France</div>
+  <div class="navbar-brand">Prénoms en France</div>
   <div class="" id="navbarNav">
     <ul class="navbar-nav">
-      <li class="nav-item active">
+      <li class="nav-item" [ngClass]="{'active': activeTab === 'year'}">
         <a class="nav-link" [routerLink]="['/year']">Par année</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" [ngClass]="{'active': activeTab === 'name'}">
         <a class="nav-link" [routerLink]="['/name']">Par prénom</a>
       </li>
     </ul>
