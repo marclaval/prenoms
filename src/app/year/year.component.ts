@@ -13,8 +13,8 @@ export class YearComponent implements OnInit, OnDestroy {
   data: NameData[];
   boundaries: any;
   total: any;
-  inputBegin = 2015;
-  inputEnd = 2015;
+  inputBegin = 2017;
+  inputEnd = 2017;
   private dataSource: Subscription;
   private subscription: Subscription;
 
@@ -29,7 +29,7 @@ export class YearComponent implements OnInit, OnDestroy {
         this.inputBegin = parseInt(params.get('b'), 0);
         this.inputEnd = parseInt(params.get('e'), 0);
       } else {
-        this.inputBegin = this.inputEnd = 2015;
+        this.inputBegin = this.inputEnd = 2017;
       }
       this._refresh();
     });

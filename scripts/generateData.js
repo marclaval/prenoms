@@ -4,11 +4,11 @@ iconv.skipDecodeWarning = true;
 
 let output = {
     beginYear: 1900,
-    endYear: 2015,
+    endYear: 2017,
     names: {}
 };
-const input = fs.readFileSync('./scripts/nat2015.txt', "binary");
-const lines = iconv.decode(input, "ISO-8859-1").split('\n');
+const input = fs.readFileSync('./scripts/nat2017.txt', "binary");
+const lines = iconv.decode(input, "UTF-8").split('\n');
 
 const stats = new Array(output.endYear - output.beginYear + 1);
 const statsM = new Array(output.endYear - output.beginYear + 1);
